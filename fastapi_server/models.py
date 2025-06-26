@@ -27,7 +27,7 @@ class CleanTextRequest(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "text": "Some text with artifacts\\n\\nPage 5\\n\\nmore content here"
             }
@@ -48,7 +48,7 @@ class CleanTextResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "cleaned_text": "Clean text without any artifacts"
             }
@@ -66,7 +66,7 @@ class ChatMessage(BaseModel):
     """
     role: str = Field(
         ...,
-        regex="^(user|assistant)$",
+        pattern="^(user|assistant)$",
         description="Role of the message sender",
         example="user"
     )
@@ -79,7 +79,7 @@ class ChatMessage(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "role": "user",
                 "content": "Hello, I would like to know more about your product"
@@ -109,7 +109,7 @@ class ChatRequest(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "message": "Hello, I have an amazing product for you!",
                 "chat_history": [
@@ -146,7 +146,7 @@ class ChatResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "response": "Interesting, but I'm quite busy right now. What makes your product special?",
                 "updated_history": [
@@ -173,9 +173,9 @@ class ErrorResponse(BaseModel):
         error_code (str): Error code for programmatic handling (optional)
     """
     detail: str = Field(
-    ...,
-    description="Error message description",
-    example="Invalid input data"
+        ...,
+        description="Error message description",
+        example="Invalid input data"
     )
     error_code: Optional[str] = Field(
         default=None,
@@ -184,7 +184,7 @@ class ErrorResponse(BaseModel):
     )
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "detail": "Text field is required and cannot be empty",
                 "error_code": "MISSING_TEXT"
