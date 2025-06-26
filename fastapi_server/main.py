@@ -235,7 +235,7 @@ if __name__ == "__main__":
     print("   - GET http://localhost:8000/health")
 
     uvicorn.run(
-        "main:app",
+        "fastapi_server.main:app",
         host="0.0.0.0",
         port=8000,
         reload=True
