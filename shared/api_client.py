@@ -88,7 +88,7 @@ class FastAPIClient:
             ...     print("Server is not available")
         """
         try:
-            health_url = Config.get_full_api_url(Config.HEALTH_ENDPOINT)
+            health_url = f"{Config.FASTAPI_BASE_URL}/health"
             logger.debug(f"Checking server health at: {health_url}")
 
             response = self.session.get(health_url, timeout=5)  # Short timeout for health check
@@ -178,7 +178,7 @@ class FastAPIClient:
         Raises:
             APIClientError: If the request fails
         """
-        clean_text_url = Config.get_full_api_url()
+        clean_text_url = f"{Config.FASTAPI_BASE_URL}/clean-text"
 
         try:
             logger.debug(f"Making request to {clean_text_url} (attempt {attempt + 1})")

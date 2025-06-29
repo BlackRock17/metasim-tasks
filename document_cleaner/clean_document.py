@@ -311,7 +311,11 @@ class DocumentCleaner:
 
         # Generate: original_name_cleaned.txt
         output_filename = f"{stem}_cleaned{suffix}"
-        output_path = Config.ensure_output_dir() / output_filename
+
+        # Create output directory
+        output_dir = Path("output")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_path = output_dir / output_filename
 
         return str(output_path)
 
