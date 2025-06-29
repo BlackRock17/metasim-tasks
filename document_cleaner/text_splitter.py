@@ -18,7 +18,10 @@ from dataclasses import dataclass
 # LangChain import for text splitting
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-from ..shared.config import Config
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from shared.config import Config
 
 # Setup logging
 logger = logging.getLogger(__name__)

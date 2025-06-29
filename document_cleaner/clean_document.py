@@ -15,6 +15,7 @@ Features:
 - Clean, readable code structure
 """
 
+import sys
 import os
 import time
 import logging
@@ -22,9 +23,11 @@ from pathlib import Path
 from typing import List
 
 # Import our custom modules
-from .text_splitter import TextSplitter, ChunkInfo
-from ..shared.api_client import FastAPIClient, APIClientError
-from ..shared.config import Config
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from document_cleaner.text_splitter import TextSplitter, ChunkInfo
+from shared.api_client import FastAPIClient, APIClientError
+from shared.config import Config
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
