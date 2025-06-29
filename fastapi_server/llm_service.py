@@ -69,11 +69,11 @@ class LLMService:
 
         # Simple cleaning prompt
         prompt = f"""Remove artifacts from this text like headers, footers, page numbers, and formatting noise.
-Keep all meaningful content and fix broken sentences.
-Return only the cleaned text without explanations.
+                     Keep all meaningful content and fix broken sentences.
+                     Return only the cleaned text without explanations.
 
-Text to clean:
-{text}"""
+                     Text to clean:
+                     {text}"""
 
         try:
             messages = [HumanMessage(content=prompt)]
@@ -103,10 +103,12 @@ Text to clean:
             messages = []
 
             # System message - define AI behavior
-            system_prompt = """You are a skeptical B2B buyer in a sales conversation. 
-You need convincing before making purchase decisions.
-Ask relevant questions, express concerns about price and ROI.
-Be professional but cautious. Only agree to buy if given compelling arguments."""
+            system_prompt = """You are a BUYER, not a seller. You are meeting with a SALESPERSON who wants to sell YOU something.
+                               You are skeptical and don't know what they're offering yet.
+                               Keep responses concise (2-3 sentences max).
+                               Start by asking the salesperson what THEY offer since you don't know their product.
+                               Be professional but cautious. Ask questions about ROI, pricing, and value.
+                               Don't agree to buy without compelling evidence."""
 
             messages.append(HumanMessage(content=f"System: {system_prompt}"))
 

@@ -15,7 +15,6 @@ import logging
 from typing import List
 from dataclasses import dataclass
 
-# LangChain import for text splitting
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 import sys
