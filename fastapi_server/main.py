@@ -19,7 +19,6 @@ from .models import (
     ChatRequest,
     ChatResponse,
     ChatMessage,
-    ErrorResponse
 )
 
 # Setup logging
