@@ -24,6 +24,7 @@ wheels/
 venv/
 env/
 ENV/
+.venv/
 
 # Environment variables
 .env
@@ -45,5 +46,15 @@ Thumbs.db
 *.tmp
 *.temp
 
-*.txt
+# Data directories - new structure
+data/output/*.txt
+data/input/*.txt
+!data/input/sample_*.txt
+!data/samples/*.txt
+
+# Keep directories but ignore content
+data/output/.gitkeep
+data/input/.gitkeep
+
+# Old output directory (remove after migration)
 output/

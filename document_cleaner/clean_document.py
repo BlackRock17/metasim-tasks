@@ -316,7 +316,7 @@ class DocumentCleaner:
         output_filename = f"{stem}_cleaned{suffix}"
 
         # Create output directory
-        output_dir = Path("output")
+        output_dir = Path(Config.DATA_OUTPUT_DIR)
         output_dir.mkdir(parents=True, exist_ok=True)
         output_path = output_dir / output_filename
 
@@ -343,11 +343,11 @@ def main():
     """
     Simple command-line interface for document cleaning.
     """
-    import sys
 
     if len(sys.argv) < 2:
         print("Usage: python clean_document.py input_file.txt [output_file.txt]")
-        print("Example: python clean_document.py document.txt")
+        print(f"Example: python clean_document.py {Config.DATA_INPUT_DIR}/document.txt")
+        print(f"Output will be saved to: {Config.DATA_OUTPUT_DIR}/")
         sys.exit(1)
 
     input_file = sys.argv[1]
@@ -356,6 +356,7 @@ def main():
     # Check if input file exists
     if not Path(input_file).exists():
         print(f"Error: Input file not found: {input_file}")
+        print(f"Tip: Place your files in {Config.DATA_INPUT_DIR}/ directory")
         sys.exit(1)
 
     try:

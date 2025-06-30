@@ -28,6 +28,11 @@ class Config:
     REQUEST_TIMEOUT = 30
     MAX_RETRIES = 3
 
+    # File Paths Configuration
+    DATA_INPUT_DIR = "data/input"
+    DATA_OUTPUT_DIR = "data/output"
+    DATA_SAMPLES_DIR = "data/samples"
+
 
 # Convenience function for getting config
 def get_config() -> Config:
