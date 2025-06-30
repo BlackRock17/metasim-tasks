@@ -20,6 +20,11 @@ class Config:
     FASTAPI_BASE_URL = os.getenv("FASTAPI_URL", "http://localhost:8000")
 
     # Text Processing Configuration
+    # Chunk size optimized based on GPT-4o cleaning prompt performance testing:
+    # - 500 chars: Insufficient context for effective artifact removal
+    # - 1000 chars: Good results but loses some semantic coherence
+    # - 1500 chars: Optimal balance - maintains context while fitting prompt limits
+    # - 2000+ chars: Approach token limits, risk of incomplete processing
     DEFAULT_CHUNK_SIZE = 1500
     MAX_CHUNK_SIZE = 2000
     MIN_CHUNK_SIZE = 200

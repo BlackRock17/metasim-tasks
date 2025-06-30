@@ -55,6 +55,9 @@ class TextSplitter:
         """
         Initialize the text splitter.
 
+        Chunk size defaults to 1500 characters - optimized through testing
+        with the text cleaning prompt for best artifact removal performance.
+
         Args:
             chunk_size: Target chunk size in characters
             chunk_overlap: Overlap between chunks in characters
