@@ -1,7 +1,7 @@
 """
-Simple Pydantic models for FastAPI request/response validation.
+Pydantic models for FastAPI request/response validation.
 
-Basic models without complex validation for interview clarity.
+Data models for text cleaning and chat functionality.
 """
 
 from pydantic import BaseModel

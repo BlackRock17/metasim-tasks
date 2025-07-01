@@ -1,8 +1,7 @@
 """
 Simple configuration settings for the document cleaner application.
 
-Contains only essential settings needed for the interview tasks.
-All complex features and utilities have been removed for clarity.
+Contains only essential settings needed for the tasks.
 """
 
 import os

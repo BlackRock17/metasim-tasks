@@ -1,8 +1,8 @@
 """
-Simple LLM Service using Azure OpenAI for text cleaning and chat functionality.
+LLM Service using Azure OpenAI for text cleaning and chat functionality.
 
-This module provides direct Azure OpenAI integration without complex LangChain abstractions.
-Simplified for interview clarity while maintaining all required functionality.
+This module provides Azure OpenAI integration for document processing
+and conversational AI capabilities.
 """
 
 import os
