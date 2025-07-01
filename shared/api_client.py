@@ -1,8 +1,8 @@
 """
-Simple HTTP client for communicating with the FastAPI server.
+HTTP client for communicating with the FastAPI server.
 
-This module provides basic functionality for making API calls to the FastAPI server
-for text cleaning. Simplified for interview clarity.
+This module provides functionality for making API calls to the FastAPI server
+for text cleaning operations.
 """
 
 import requests
